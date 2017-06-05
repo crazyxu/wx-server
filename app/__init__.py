@@ -10,10 +10,9 @@ engine = create_engine("mysql://root:1234567890@localhost:3306/tongying?charset=
                     encoding='utf-8', echo=True)
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
-session = Session()
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 #
 # from app import views
 from app import api
-from app import session
+from app import Session
 from app import Base
